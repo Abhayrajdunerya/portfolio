@@ -4,117 +4,244 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
-}
-
 :root {
+  --radius: 0.625rem; /* 10px base, matches --xl in the JSM radius scale */
+
+  /* ---- Light mode (inferred companion, not from source) ---- */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.091 0.055 280.3);
+  --card: oklch(0.985 0.005 264.5);
+  --card-foreground: oklch(0.091 0.055 280.3);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --popover-foreground: oklch(0.091 0.055 280.3);
+  --primary: oklch(0.699 0.167 247.3);       /* brand-blue #2fa4ff */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.928 0.006 264.5);
+  --secondary-foreground: oklch(0.202 0.046 275.9);
+  --muted: oklch(0.955 0.005 264.5);
+  --muted-foreground: oklch(0.45 0.03 270);
+  --accent: oklch(0.955 0.02 247.3);
+  --accent-foreground: oklch(0.287 0.064 275.5);
+  --destructive: oklch(0.631 0.22 2.0);       /* hot-pink #eb367f as error/destructive */
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.928 0.006 264.5);
+  --input: oklch(0.928 0.006 264.5);
+  --ring: oklch(0.757 0.138 240.9);           /* cyan-blue-accent #51baff */
+
+  --chart-1: oklch(0.699 0.167 247.3);  /* brand blue */
+  --chart-2: oklch(0.723 0.192 149.6);  /* success green */
+  --chart-3: oklch(0.606 0.219 292.7);  /* violet */
+  --chart-4: oklch(0.631 0.22 2.0);     /* hot pink */
+  --chart-5: oklch(0.801 0.163 70.4);   /* amber */
+
+  --sidebar: oklch(0.985 0.005 264.5);
+  --sidebar-foreground: oklch(0.091 0.055 280.3);
+  --sidebar-primary: oklch(0.699 0.167 247.3);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.955 0.02 247.3);
+  --sidebar-accent-foreground: oklch(0.287 0.064 275.5);
+  --sidebar-border: oklch(0.928 0.006 264.5);
+  --sidebar-ring: oklch(0.757 0.138 240.9);
+
+  /* ---- Brand tokens (identical in both modes) ---- */
+  --brand-hot-pink: oklch(0.631 0.22 2.0);      /* #eb367f */
+  --brand-success-green: oklch(0.723 0.192 149.6); /* #22c55e — badges, "Just Dropped", Doing */
+  --brand-vivid-green: oklch(0.8 0.182 151.7);     /* #4ade80 — lightbulb icon fill */
+  --brand-violet: oklch(0.606 0.219 292.7);        /* #8b5cf6 — feature icon accent */
+  --brand-indigo: oklch(0.585 0.204 277.1);        /* #6366f1 — feature icon accent */
+
+  /* Gradient stops — heading highlight (cyan -> blue) */
+  --gradient-heading-from: oklch(0.757 0.138 240.9); /* #51baff */
+  --gradient-heading-to: oklch(0.699 0.167 247.3);   /* #2fa4ff */
+  /* Gradient stops — primary CTA button (yellow -> amber) */
+  --gradient-cta-from: oklch(0.917 0.187 101.2); /* #ffe61c */
+  --gradient-cta-to: oklch(0.801 0.163 70.4);    /* #ffa929 */
+
+  --font-sans: var(--font-geist-sans), "Geist Sans Fallback", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+
+  --shadow-color: 240 30% 5%;
+  --shadow-2xs: 0px 1px 2px 0px hsl(var(--shadow-color) / 0.05);
+  --shadow-xs: 0px 1px 3px 0px hsl(var(--shadow-color) / 0.08);
+  --shadow-sm: 0px 2px 4px -1px hsl(var(--shadow-color) / 0.1);
+  --shadow: 0px 4px 8px -2px hsl(var(--shadow-color) / 0.12);
+  --shadow-md: 0px 8px 16px -4px hsl(var(--shadow-color) / 0.14);
+  --shadow-lg: 0px 16px 32px -8px hsl(var(--shadow-color) / 0.16);
+  --shadow-xl: 0px 24px 48px -12px hsl(var(--shadow-color) / 0.2);
+  --shadow-2xl: 0px 32px 64px -16px hsl(var(--shadow-color) / 0.25);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* ---- Dark mode — the real, verified JS Mastery surface stack ---- */
+  --background: oklch(0.091 0.055 280.3);       /* deep-space-black #020013 — page bg */
+  --foreground: oklch(1 0 0);                    /* pure-white #ffffff — primary text */
+  --card: oklch(0.159 0.038 276.3);              /* dark-navy-200 #090b1d — card bg */
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.202 0.046 275.9);           /* dark-navy-300 #11142b */
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(0.699 0.167 247.3);           /* brand-blue #2fa4ff */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.23 0.05 276.7);           /* dark-navy-400 #171a34 */
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.202 0.046 275.9);             /* dark-navy-300 */
+  --muted-foreground: oklch(0.848 0.038 267.3);  /* slate-blue #c2cde7 — body copy on dark */
+  --accent: oklch(0.287 0.064 275.5);            /* dark-navy-500 #22274a — hover/elevated */
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.631 0.22 2.0);          /* hot-pink #eb367f */
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.318 0.053 274.1);            /* dark-navy-600 #2a304d — subtle border */
+  --input: oklch(0.328 0.067 276.4);             /* dark-navy-700 #2c3157 — visible border/input */
+  --ring: oklch(0.757 0.138 240.9);              /* cyan-blue-accent #51baff */
+
+  --chart-1: oklch(0.757 0.138 240.9);  /* cyan */
+  --chart-2: oklch(0.723 0.192 149.6);  /* green */
+  --chart-3: oklch(0.606 0.219 292.7);  /* violet */
+  --chart-4: oklch(0.631 0.22 2.0);     /* hot pink */
+  --chart-5: oklch(0.801 0.163 70.4);   /* amber */
+
+  --sidebar: oklch(0.159 0.038 276.3);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.699 0.167 247.3);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.287 0.064 275.5);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.318 0.053 274.1);
+  --sidebar-ring: oklch(0.757 0.138 240.9);
+
+  --shadow-color: 240 60% 1%;
+  --shadow-2xs: 0px 1px 2px 0px hsl(var(--shadow-color) / 0.3);
+  --shadow-xs: 0px 1px 3px 0px hsl(var(--shadow-color) / 0.35);
+  --shadow-sm: 0px 2px 4px -1px hsl(var(--shadow-color) / 0.4);
+  --shadow: 0px 4px 8px -2px hsl(var(--shadow-color) / 0.45);
+  --shadow-md: 0px 8px 16px -4px hsl(var(--shadow-color) / 0.5);
+  --shadow-lg: 0px 16px 32px -8px hsl(var(--shadow-color) / 0.55);
+  --shadow-xl: 0px 24px 48px -12px hsl(var(--shadow-color) / 0.6);
+  --shadow-2xl: 0px 32px 64px -16px hsl(var(--shadow-color) / 0.7);
+
+  /* CTA button glow — visible on the pricing card + primary CTA in screenshots */
+  --glow-cta: 0px 0px 40px 4px oklch(0.801 0.163 70.4 / 0.35);
+  --glow-ring: 0px 0px 24px 2px oklch(0.757 0.138 240.9 / 0.3);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand color utilities: bg-brand-hot-pink, text-brand-violet, etc. */
+  --color-brand-hot-pink: var(--brand-hot-pink);
+  --color-brand-success-green: var(--brand-success-green);
+  --color-brand-vivid-green: var(--brand-vivid-green);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-indigo: var(--brand-indigo);
+  --color-gradient-heading-from: var(--gradient-heading-from);
+  --color-gradient-heading-to: var(--gradient-heading-to);
+  --color-gradient-cta-from: var(--gradient-cta-from);
+  --color-gradient-cta-to: var(--gradient-cta-to);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* Radius scale — from the extracted JSM shape system.
+     rounded-sm..rounded-4xl, plus rounded-pill for buttons/badges. */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 14px;
+  --radius-3xl: 20px;
+  --radius-4xl: 32px;
+  --radius-pill: 9999px;
+
+  /* shadcn's default radius aliases, mapped onto the JSM scale so
+     existing shadcn components (which use rounded-md/rounded-lg) inherit
+     the brand's rounding automatically. */
+  --radius-none: 0px;
+  --radius-DEFAULT: var(--radius-xl);
+
+  /* Named type scale — use as text-hero-headline, text-card-heading, etc.
+     Each pairs a font-size with its line-height per Tailwind v4 convention. */
+  --text-hero-headline: 48px;
+  --text-hero-headline--line-height: 56px;
+  --text-hero-headline--font-weight: 700;
+
+  --text-section-heading-xl: 40px;
+  --text-section-heading-xl--line-height: 50px;
+  --text-section-heading-xl--letter-spacing: -2px;
+  --text-section-heading-xl--font-weight: 700;
+
+  --text-section-heading-lg: 36px;
+  --text-section-heading-lg--line-height: 40px;
+  --text-section-heading-lg--font-weight: 700;
+
+  --text-card-heading: 28px;
+  --text-card-heading--line-height: 32px;
+  --text-card-heading--font-weight: 700;
+
+  --text-subheading: 24px;
+  --text-subheading--line-height: 32px;
+  --text-subheading--font-weight: 700;
+
+  --text-body-large: 18px;
+  --text-body-large--line-height: 28px;
+  --text-body-large--font-weight: 400;
+
+  --text-body-large-semibold: 18px;
+  --text-body-large-semibold--line-height: 28px;
+  --text-body-large-semibold--font-weight: 600;
+
+  --text-body-regular: 16px;
+  --text-body-regular--line-height: 24px;
+  --text-body-regular--font-weight: 400;
+
+  --text-body-semibold: 16px;
+  --text-body-semibold--line-height: 24px;
+  --text-body-semibold--font-weight: 600;
+
+  --text-caption: 14px;
+  --text-caption--line-height: 20px;
+  --text-caption--font-weight: 400;
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
 }
 
 @layer base {
@@ -122,9 +249,67 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
-  html {
-    @apply font-sans;
+}
+
+/* ------------------------------------------------------------------ */
+/* Brand utility layer — gradient text, gradient buttons, glow, cards  */
+/* These encode signature JSM patterns that plain shadcn tokens can't  */
+/* express (multi-stop gradients, glow shadows). Use alongside shadcn. */
+/* ------------------------------------------------------------------ */
+@layer components {
+  /* Gradient headline highlight — apply to a <span> around the specific
+     word(s) you want to accent inside an otherwise white heading.
+     JSM never gradients an entire headline; it gradients 1-2 keywords. */
+  .text-gradient-heading {
+    background-image: linear-gradient(90deg, var(--gradient-heading-from), var(--gradient-heading-to));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  /* Primary CTA — amber/gold gradient pill button, e.g. "Join JS Mastery Pro" */
+  .btn-cta-gradient {
+    background-image: linear-gradient(180deg, var(--gradient-cta-from), var(--gradient-cta-to));
+    color: oklch(0.159 0.038 276.3);
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    box-shadow: var(--glow-cta, none);
+  }
+
+  /* Secondary CTA — solid brand-blue pill button, e.g. "View All Courses" */
+  .btn-secondary-pill {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+  }
+
+  /* Standard dark surface card used for course cards, testimonials, FAQ rows */
+  .card-surface {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2xl);
+  }
+
+  /* Gradient border trick used on the pricing card (glow ring). Pair a
+     transparent-interior card with this ::before pseudo-element approach
+     documented in design.md under "Known implementation patterns". */
+  .card-glow-border {
+    position: relative;
+    border-radius: var(--radius-3xl);
+  }
+  .card-glow-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--gradient-cta-from), var(--gradient-cta-to));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
   }
 }
