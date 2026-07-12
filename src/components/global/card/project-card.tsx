@@ -1,51 +1,107 @@
-"use client";
-
-import { useTheme } from "next-themes";
+import { MoveUpRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { MagicCard } from "@/components/ui/magic-card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
+import type { Project } from "@/types";
 
-export function ProjectCard() {
-  const { theme } = useTheme();
+type Props = {
+  project: Project;
+  className?: string;
+};
+
+export default function ProjectCard({
+  project: {
+    title,
+    description,
+    imgUrl,
+    category,
+    tags,
+    status,
+    demo,
+    github,
+    year,
+  },
+  className,
+}: Props) {
   return (
-    <Card className="w-full max-w-sm border-none p-0 shadow-none">
-      <MagicCard
-        gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-        className="p-0"
+    <div
+      className={cn(
+        "bg-elite-content-card-outline rounded-2xl p-0.5 flex-center",
+        "transition-transform duration-300 ease-out hover:scale-105",
+      )}
+    >
+      <Card
+        className={cn(
+          "bg-linear-dark rounded-2xl flex h-full w-full flex-col gap-5 bg-cover bg-center px-5 py-8",
+          className,
+        )}
       >
-        <CardHeader className="border-border border-b p-4 [.border-b]:pb-4">
-          <CardTitle>Login</CardTitle>
-          <CardDescription>
-            Enter your credentials to access your account
-          </CardDescription>
+        <CardHeader className="w-full p-0 relative">
+          <Badge variant={"secondary"} className={cn("absolute top-2 right-2")}>{status}</Badge>
+          <Image
+            src={imgUrl}
+            alt={title}
+            className={cn("object-cover rounded-xl aspect-4/3")}
+            height={300}
+            width={600}
+          />
         </CardHeader>
-        <CardContent className="p-4">
-          <form>
-            <div className="grid gap-4">
-              <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="name@example.com" />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="password">Password</Label>
-                <Input id="password" type="password" />
-              </div>
-            </div>
-          </form>
+        <CardContent className={cn("flex flex-col gap-3 p-0")}>
+          <div className="flex items-center justify-between">
+            <Badge className="" variant={"outline"}>
+              {category}
+            </Badge>
+            <Badge className="" variant={"outline"}>
+              {year}
+            </Badge>
+          </div>
+          <h5 className="global-20-bold md:global-24-bold line-clamp-2 text-foreground">
+            {title}
+          </h5>
+          <p className="global-18-regular line-clamp-2 text-light-300">
+            {description}
+          </p>
+          <div className="flex gap-2 flex-wrap">
+            {tags.map((tag) => (
+              <Badge variant={"secondary"} key={tag} className="shadow">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+
+          {/* Source code & Demo Links */}
+          <div className="flex items-center gap-4 mt-2">
+            {demo && (
+              <Button
+                variant={"link"}
+                render={
+                  <Link href={demo} target="_blank">
+                    Live Demo <MoveUpRight size={16} />
+                  </Link>
+                }
+                className={cn("hover:no-underline px-0 py-0")}
+              />
+            )}
+            {github && (
+              <>
+                {demo && <Separator orientation="vertical" />}
+                <Button
+                  variant={"outline"}
+                  render={
+                    <Link href={github} target="_blank">
+                      Source Code
+                    </Link>
+                  }
+                />
+              </>
+            )}
+          </div>
         </CardContent>
-        <CardFooter className="border-border border-t p-4 [.border-t]:pt-4">
-          <Button className="w-full">Sign In</Button>
-        </CardFooter>
-      </MagicCard>
-    </Card>
+      </Card>
+    </div>
   );
 }

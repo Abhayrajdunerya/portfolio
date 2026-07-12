@@ -1,3 +1,4 @@
+import DockNavigation from "@/components/global/navigation/dock-navigation";
 import RootLayoutProviders from "@/providers/root-layout-provider";
 
 type Props = {
@@ -5,5 +6,10 @@ type Props = {
 };
 
 export default function MainLayout({ children }: Props) {
-  return <RootLayoutProviders>{children}</RootLayoutProviders>;
+  return (
+    <RootLayoutProviders>
+      {children}
+      <DockNavigation />
+    </RootLayoutProviders>
+  );
 }

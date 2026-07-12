@@ -24,11 +24,11 @@ export default function Home() {
           {/* Project section */}
           <Projects />
 
-          {/* Experience section */}
-          <Experience />
-
           {/* Certifications section */}
           <Certifications />
+
+          {/* Experience section */}
+          <Experience />
 
           {/* Education section */}
           <Education />

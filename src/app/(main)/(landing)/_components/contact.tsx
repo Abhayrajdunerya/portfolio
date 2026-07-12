@@ -1,5 +1,9 @@
+import Section from "@/components/global/wrapper/section";
+
 export default function Contact() {
   return (
-    <div>Contact</div>
+    <Section id="contact" heading="Contact Us">
+
+    </Section>
   )
 }
