@@ -31,7 +31,7 @@ export default function CertificateCard({
   return (
     <Card
       className={cn(
-        "bg-linear-dark shadow transition-transform duration-300 ease-out hover:scale-105 hover:shadow-primary-1",
+        "bg-linear-dark shadow transition-transform duration-300 ease-out hover:scale-105",
         className,
       )}
     >

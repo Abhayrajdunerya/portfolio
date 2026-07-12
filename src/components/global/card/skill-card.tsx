@@ -12,7 +12,7 @@ export default function SkillCard({ skill: { icon, title } }: Props) {
     <Card
       className={cn(
         "rounded-DEFAULT aspect-square p-3! flex items-center justify-center bg-secondary",
-        "transition-transform duration-300 ease-out hover:scale-105 hover:rotate-6 hover:shadow-primary-1"
+        "transition-transform duration-300 ease-out hover:scale-105 hover:rotate-6"
       )}
     >
       <Image

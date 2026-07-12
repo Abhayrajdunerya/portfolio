@@ -1,5 +1,6 @@
 const PREFIX = "/icons";
 const SKILLS = `${PREFIX}/skills`;
+const LOGOS = `${PREFIX}/logos`;
 
 export const ICONS = {
   SKILLS: {
@@ -38,6 +39,13 @@ export const ICONS = {
       DOCKER: `${SKILLS}/docker.svg`,
       LINUX: `${SKILLS}/linux.svg`,
     },
+  },
+  LOGOS: {
+    GOOGLE: `${LOGOS}/google.svg`,
+    AWS: `${LOGOS}/aws.svg`,
+    HACKER_RANK: `${LOGOS}/hacker-rank.png`,
+    UDEMY: `${LOGOS}/udemy.png`,
+    JAVASCRIPT_MASTERY: `${LOGOS}/javascript-mastery.jpg`,
   },
   VERIFIED: `${PREFIX}/verified.svg`
 };
