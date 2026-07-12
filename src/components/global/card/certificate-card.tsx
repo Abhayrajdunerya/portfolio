@@ -41,7 +41,7 @@ export default function CertificateCard({
           alt={`${issuer} logo`}
           height={60}
           width={60}
-          className=""
+          className="rounded-DEFAULT"
         />
         <div className="flex flex-col gap-0.5">
           <CardTitle className="text-card-foreground line-clamp-2 global-16-semibold">
