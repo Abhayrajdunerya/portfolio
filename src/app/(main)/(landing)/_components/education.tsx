@@ -8,9 +8,10 @@ export default function Education() {
     title: education.course,
     tags: [],
     body: () => (
-      <div>
-        <div className="">{education.institute}</div>
-        {education.description && <p>{education.description}</p>}
+      <div className="flex flex-col gap-1">
+        <div className="text-foreground global-18-regular">{education.institute}</div>
+        {education.description && <p className="text-secondary-foreground global-16-regular">{education.description}</p>}
+        {education.score && <p className="text-secondary-foreground global-16-regular">{education.score}</p>}
       </div>
     ),
   }));

@@ -66,6 +66,8 @@ export type Experience = {
   logo: string;
   description: string;
   tags?: string[];
+  offerLetter?: string;
+  joiningLetter?: string;
 };
 
 export type Education = {
@@ -75,6 +77,8 @@ export type Education = {
   institute: string;
   description?: string;
   tags?: string[];
+  score?: string;
+  certificate?: string;
 };
 
 export interface Testimonial {
