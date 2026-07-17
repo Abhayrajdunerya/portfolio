@@ -1,7 +1,9 @@
 import type { Education } from "@/types";
+import { ASSETS } from "./assets";
 
 export const EDUCATION: Education[] = [
   {
+    logo: ASSETS.ICONS.LOGOS.IET_DAVV,
     fromDate: "10/20/2020",
     toDate: "05/30/2024",
     course: "B.E. in Information Technology",
@@ -11,6 +13,7 @@ export const EDUCATION: Education[] = [
     score: "CGPA: 8.36/10",
   },
   {
+    logo: ASSETS.ICONS.LOGOS.MPBSE,
     fromDate: "06/15/2019",
     toDate: "03/30/2020",
     course: "Higher Secondary - Class 12th (Mathematics)",

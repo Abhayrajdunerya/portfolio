@@ -1,5 +1,6 @@
 const PREFIX = "/images";
 const CERTIFICATES = `${PREFIX}/certificates`;
+const EMPLOYMENT = `${PREFIX}/employment-letters`;
 
 export const IMAGES = {
   CERTIFICATES: {
@@ -18,6 +19,16 @@ export const IMAGES = {
     },
     JAVASCRIPT_MASTERY: {
       NEXT_JS_15: `${CERTIFICATES}/nextjs-15.webp`,
+    },
+  },
+  EMPLOYMENT: {
+    NUCLEUSTEQ: {
+      OFFER_LETTER: `${EMPLOYMENT}/offer-letters/nucleusteq-offer-letter.webp`,
+      SPARKLING_STAR_2025: `${EMPLOYMENT}/certificates/nucleusteq-sparkling-star-2025.webp`
+    },
+    OASIS_INFOBYTE: {
+      OFFER_LETTER: `${EMPLOYMENT}/offer-letters/oasis-infobyte-offer-letter.webp`,
+      INTERNSHIP_CERTIFICATE: `${EMPLOYMENT}/certificates/oasis-infobyte-internship-certificate.webp`,
     },
   },
 };

@@ -1,4 +1,5 @@
 import type { Experience } from "@/types";
+import { ASSETS } from "./assets";
 
 export const EXPERIENCE: Experience[] = [
   {
@@ -6,9 +7,9 @@ export const EXPERIENCE: Experience[] = [
     toDate: new Date().toLocaleDateString("en-US"),
     role: "Software Engineer",
     company: "NucleusTeq",
-    logo: "",
-    offerLetter: "",
-    joiningLetter: "",
+    logo: ASSETS.ICONS.LOGOS.NUCLEUSTEQ,
+    offerLetter: ASSETS.IMAGES.EMPLOYMENT.NUCLEUSTEQ.OFFER_LETTER,
+    certificate: ASSETS.IMAGES.EMPLOYMENT.NUCLEUSTEQ.SPARKLING_STAR_2025,
     description:
       "Managed a cross-functional team of 8 developers. Delivered award-winning enterprise CMS solutions for Fortune 500 clients. Implemented CI/CD pipelines that reduced deployment errors by 60%.",
     tags: ["Python", "AWS", "Django"],
@@ -18,9 +19,9 @@ export const EXPERIENCE: Experience[] = [
     toDate: "04/23/2024",
     role: "Software Engineer Trainee",
     company: "NucleusTeq",
-    logo: "",
+    logo: ASSETS.ICONS.LOGOS.NUCLEUSTEQ,
     offerLetter: "",
-    joiningLetter: "",
+    certificate: "",
     description:
       "Managed a cross-functional team of 8 developers. Delivered award-winning enterprise CMS solutions for Fortune 500 clients. Implemented CI/CD pipelines that reduced deployment errors by 60%.",
     tags: ["Python", "AWS", "Django"],
@@ -30,9 +31,9 @@ export const EXPERIENCE: Experience[] = [
     toDate: "08/10/2023",
     role: "Web Development and Designing Internship",
     company: "OASIS Infobyte",
-    logo: "",
-    offerLetter: "",
-    joiningLetter: "",
+    logo: ASSETS.ICONS.LOGOS.OASIS_INFOBYTE,
+    offerLetter: ASSETS.IMAGES.EMPLOYMENT.OASIS_INFOBYTE.OFFER_LETTER,
+    certificate: ASSETS.IMAGES.EMPLOYMENT.OASIS_INFOBYTE.INTERNSHIP_CERTIFICATE,
     description:
       "Managed a cross-functional team of 8 developers. Delivered award-winning enterprise CMS solutions for Fortune 500 clients. Implemented CI/CD pipelines that reduced deployment errors by 60%.",
     tags: ["React", "Node", "Express", "MongoDB", "Firebase"],

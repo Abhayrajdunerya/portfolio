@@ -67,10 +67,11 @@ export type Experience = {
   description: string;
   tags?: string[];
   offerLetter?: string;
-  joiningLetter?: string;
+  certificate?: string;
 };
 
 export type Education = {
+  logo: string;
   fromDate: string;
   toDate: string;
   course: string;

@@ -46,6 +46,10 @@ export const ICONS = {
     HACKER_RANK: `${LOGOS}/hacker-rank.png`,
     UDEMY: `${LOGOS}/udemy.png`,
     JAVASCRIPT_MASTERY: `${LOGOS}/javascript-mastery.jpg`,
+    NUCLEUSTEQ: `${LOGOS}/nucleusteq.jpg`,
+    OASIS_INFOBYTE: `${LOGOS}/oasis-infobyte.webp`,
+    IET_DAVV: `${LOGOS}/iet-davv.png`,
+    MPBSE: `${LOGOS}/mpbse.jpg`,
   },
   VERIFIED: `${PREFIX}/verified.svg`
 };
